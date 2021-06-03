@@ -3,6 +3,6 @@
 
 ## [Queue](Notes/Queue.md)
 
-346. [Moving Average from Data Stream](Question/346.md) (Easy)
+346. [Moving Average from Data Stream](Questions/346.md) (Easy)
 
 ## [Stack]
