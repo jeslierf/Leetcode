@@ -5,9 +5,9 @@
 using namespace std;
 
 int main() {
-    string a = "123456";
-
-    cout << a.substr(1, 2) << endl;
+    vector<int> x(256, 0);
+    x['a'] = 10;
+    cout << x['a'] << endl;
 
     return 0;
 }
