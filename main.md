@@ -71,6 +71,7 @@ void printList(Node* n)
 
 ## Leetcode
 - 2 [Add Two Numbers](Questions/2.md) (Medium, Linked List)
+- 3 [Longest Substring Without Repeating Characters](Questions/3.md)
 - 56 [Merge Intervals](Questions/56.md) (Medium, Array, Sort)
 - 146 [LRU Cache](Questions/146.md) (Medium, LRU, Hash Table, C++ Vector)
 - 200 [Number of Islands](Questions/200.md) (Medium, DFS)
