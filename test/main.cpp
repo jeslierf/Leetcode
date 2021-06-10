@@ -2,35 +2,30 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include <queue>
+#include <stack>
 using namespace std;
 
-int minMeetingRooms(vector<vector<int>>& intervals) {
-    int num = 0;
-    sort(intervals.begin(), intervals.end());
-    for (int i = 0; i < intervals.size(); i++) {
-        int j = i;
-        int local_num = 1;
-        cout << intervals[i][0] << " ";
-        while(--j >= 0) {
-            if (intervals[i][0] < intervals[j][1]) {
-                cout << intervals[j][1] << " ";
-                local_num++;
-            } else {
-                break;
-            }
-        }
-        cout << endl;
-        num = local_num > num ? local_num : num;
-    }
-
-    return num;
-}
-
 int main() {
-    vector<vector<int>> x = {{4, 18}, {1, 35}, {12, 45}, {25, 46}, {22, 27}};
+    stack<int> s;
+    cout << "Empty: " << s.empty() << endl;
+    // Stdout ---- Empty: 1
 
-    int res = minMeetingRooms(x);
-    cout << res << endl;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    cout << "Top: " << s.top() << endl;
+    // Stdout ---- Top: 3
+
+    s.pop();
+    cout << "Top: " << s.top() << endl;
+    // Stdout ---- Top: 2
+
+    stack<int> s_;
+    s_.swap(s);
+    cout << "New stack size: " << s_.size() << ", Old stack size: " << s.size() << endl;
+    // Stdout ---- New stack size: 2, Old stack size: 0
+
 
     return 0;
 }

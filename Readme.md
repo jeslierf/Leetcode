@@ -1,24 +1,35 @@
 # Leetcode
 
 ---
-
-### Queue
-First in First out (FIFO)  
-__C++ basic operations:__  
-
-| Function  | Descriptions |
-| --------- | --- |
-| `empty()` | Returns whether the queue is empty. |
-| `size()`  | Returns the size of the queue. |
-| `swap()`  | Exchange the contents of two queues but the queues must be of same type, although sizes may differ. |
-| `emplace()` | Insert a new element into the queue container, the new element is added to the end of the queue. |
-| `front()` , `back()` | Return a reference to the first/last element of the queue. |
-| `push()` , `pop()` | Add the element to the end of the queue. Delete the first element of the queue. |
-
+## C++ STL Examples
 ---
+### Queue (First in First out)
+`empty()`, `size()`, `front()`, `back()`, `swap()`
+```c++
+queue<int> q;
+cout << "Empty: " << q.empty() << endl;
+// Stdout ---- Empty: 1
 
-### Stack
-Last in First out (LIFO)
+q.push(1);
+q.push(2);
+q.push(3);
+cout << "Front: " << q.front() << ", Back: " << q.back() << endl;
+// Stdout ---- Front: 1, Back: 3
+
+q.pop();
+cout << "Front: " << q.front() << endl;
+// Stdout ---- Front: 2
+
+queue<int> q_;
+q_.swap(q);
+cout << "New queue size: " << q_.size() << ", Old queue size: " << q.size() << endl;
+// Stdout ---- New queue size: 2, Old queue size: 0
+```
+---
+### Stack (Last in First out)
+```c++
+
+```
 
 ---
 
