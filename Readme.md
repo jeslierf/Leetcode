@@ -4,7 +4,7 @@
 ## C++ STL Examples
 ---
 ### Queue (First in First out)
-`empty()`, `size()`, `front()`, `back()`, `swap()`
+`empty()`, `push()`, `front()`, `back()`, `pop()`, `swap()`, `size()`
 ```c++
 queue<int> q;
 cout << "Empty: " << q.empty() << endl;
@@ -27,8 +27,26 @@ cout << "New queue size: " << q_.size() << ", Old queue size: " << q.size() << e
 ```
 ---
 ### Stack (Last in First out)
+`empty()`, `push()`, `top()`, `pop()`, `size()`, `swap()`
 ```c++
+stack<int> s;
+cout << "Empty: " << s.empty() << endl;
+// Stdout ---- Empty: 1
 
+s.push(1);
+s.push(2);
+s.push(3);
+cout << "Top: " << s.top() << endl;
+// Stdout ---- Top: 3
+
+s.pop();
+cout << "Top: " << s.top() << endl;
+// Stdout ---- Top: 2
+
+stack<int> s_;
+s_.swap(s);
+cout << "New stack size: " << s_.size() << ", Old stack size: " << s.size() << endl;
+// Stdout ---- New stack size: 2, Old stack size: 0
 ```
 
 ---
