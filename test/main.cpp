@@ -8,7 +8,12 @@
 
 using namespace std;
 
-int main() {
+vector<int> foo() {
+    
+}
 
+int main() {
+    vector<int> x = foo();
+    cout << x.size() << endl;
     return 0;
 }
