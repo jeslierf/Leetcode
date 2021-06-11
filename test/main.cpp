@@ -9,23 +9,14 @@
 using namespace std;
 
 int main() {
-    pair<int, char> p1;
-    p1.first = 0;
-    p1.second = '0';
+    unordered_map<int, int> m;
+    m[1] = 1;
+    m[2] = 2;
+    m[4] = 4;
+    m[3] = 3;
 
-    pair<int, char> p2(p1);
-
-    pair<int, char> p3(0, '0');
-
-    pair<int, char> p4;
-    p4 = make_pair(0, '0');
-
-    p4.swap(p3);
-
-    unordered_map<string, int> m;
-    m["a"] = 10;
-    cout << ++m["b"] << endl;
-
+    auto ptr = m.begin();
+    cout << ptr << endl;
 
     return 0;
 }
