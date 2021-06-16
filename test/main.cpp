@@ -8,45 +8,33 @@
 
 using namespace std;
 
-string longestPalindrome(string s) {
-    string res = "";
-    for (int i = 0; i < s.size(); i++) {
-        for (int j = s.size() - 1; j >= i; j--) {
-            int di = i;
-            int dj = j;
-            int flag = 1;
-            while(di <= dj) {
-                if (s[di] != s[dj]) {
-                    flag = 0;
-                    break;
-                }
-                di++;
-                dj--;
-            }
-            if (flag && (j - i + 1) > res.size()) {
-                res = s.substr(i, j);
-                if (i == j) {
-                    res = s[i];
-                }
-            }
-        }
+//vector<string> foo(string str, int index, vector<string> codes) {
+//    if (index >= str.size()) {
+//        return codes;
+//    }
+//    if (index + 1 < str.size()) {
+//        codes.push_back("" + str[index + 1]);
+//        codes = foo(str, index + 1, codes);
+//    }
+//}
+int nc = 0;
+
+void foo(string s, int i) {
+    if (i < s.size() && s[i] != '0') {
+        foo(s, i + 1);
     }
-    return res;
+    if (i + 1 < s.size() && s[i] != '0' && (s[i] - '0') * 10 + s[i + 1] - '0' <= 26) {
+        foo(s, i + 2);
+    }
+    if (i == s.size()) {
+        nc ++;
+    }
 }
 
 int main() {
-    //string res = longestPalindrome("bb");
-    string x = "0123456789";
-    string y;
-    y.assign(x, 2, 2);
+    string s = "12";
+    foo(s, 0);
 
-    cout << y << endl;
-
-    std::string str;
-    std::string base="The quick brown fox jumps over a lazy dog.";
-
-    str.assign(base,10,9);
-    std::cout << str << '\n';         // "brown fox"
-
+    cout << nc << endl;
     return 0;
 }
