@@ -5,23 +5,24 @@
 
 
 def foo(s):
-    res = 0
-    d = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    de = {'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90, 'CD': 400, 'CM': 900}
-    for key in de:
-        if s.find(key) != -1:
-            print(s.find(key))
-            res = res + de[key]
-            print(res)
-            s = s[0:s.find(key)] + s[s.find(key) + 2:]
-    for ele in s:
-        res = res + d[ele]
-    return res
+    s = s.lower()
+    i = 0
+    j = len(s) - 1
+    while i <= j:
+        while i + 1 <= j and not s[i].isalnum():
+            i += 1
+        while i <= j - 1 and not s[j].isalnum():
+            j -= 1
+        if s[i] != s[j]:
+            return False
+        i += 1
+        j -= 1
+    return True
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print(foo('IV'))
+    print(foo(","))
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
